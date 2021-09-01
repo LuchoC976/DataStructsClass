@@ -17,8 +17,6 @@ def insertionSort(arr):
 
         # Update marker
         arr[prev_pos+1] = curr
-    
-    return arr
 
 print("The original array is: " + str(my_arr))
 print("The sorted array is: " + str(insertionSort(my_arr)))
