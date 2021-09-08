@@ -21,9 +21,12 @@ class SingleLinkedList:
             node = node.next
 
     # Insert implementation
-    # def insert(self, index, node):
-
-
+    '''
+    def insert(self, list, index, node):
+        if index == 0:
+            node.set_next()
+            return SingleLinkedList(node)    
+    '''
 # Linked list example
 # [Jan] -> [Feb] -> [March] -> [None]
 m1 = Node("Jan")
