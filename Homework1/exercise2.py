@@ -12,7 +12,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 best_case = []
-worst_case = [1,4,1,5,1,2,77,4]
+worst_case = [1,4,6,5,3,2,7,8]
 
 def reversedInsertionSort(arr):
     s = time.time()
@@ -44,13 +44,15 @@ for i in range(10,1000,10):
 
 
 r = pd.DataFrame()
-r['n'] = range(10,1000,10)
+r['n'] = range(11,1001,10)
 
-r['time_loop'] = [reversedInsertionSort(x) for x in r['n']]
-r['time_loop'] = 1000000*r['time_loop']
+r['time_loop'] = exec_times
+
+# r['time_loop'] = 100000*r['time_loop']
 
 r.plot(x='n', y='time_loop')
 plt.grid()
 plt.ylabel('us')
+plt.show()
 # print(best_time)
 # print(worst_time)
