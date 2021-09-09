@@ -34,6 +34,7 @@ def reversedInsertionSort(arr):
 
 exec_times = []
 
+# 2.1 Array with execution times for best and worst cases
 for i in range(10,1000,10):
     arr = []
     arr_size = i
@@ -46,13 +47,53 @@ for i in range(10,1000,10):
 r = pd.DataFrame()
 r['n'] = range(11,1001,10)
 
-r['time_loop'] = exec_times
+r['exec_time'] = exec_times
 
-# r['time_loop'] = 100000*r['time_loop']
-
-r.plot(x='n', y='time_loop')
+# 2.2 Plot times for worst and best cases
+r.plot(x='n', y='exec_time')
 plt.grid()
-plt.ylabel('us')
+plt.ylabel('seconds')
 plt.show()
-# print(best_time)
-# print(worst_time)
+
+
+
+# 2.3 Plot random ordered lists with sizes n = {100, 200, ..., 1000}
+rand_times = []
+
+for i in range(100,1000,100):
+    l = list(range(i))
+    random.shuffle(l)
+    sorted, exec_time = reversedInsertionSort(l)
+    rand_times.append(exec_time)
+
+r2 = pd.DataFrame()
+r2['n'] = range(110,1001,100)
+
+r2['exec_time'] = rand_times
+
+means = []
+for i in range(len(rand_times)):
+    means.append(r2.mean()['exec_time'])
+
+medians = []
+for i in range(len(rand_times)):
+    medians.append(r2.median()['exec_time'])
+
+stds = []
+for i in range(len(rand_times)):
+    stds.append(r2.std()['exec_time'])
+
+r2['mean'] = means
+r2['median'] = medians
+r2['std'] = stds
+
+# 2.4 Plotting mean, median and standard deviation
+ax = r2.plot(x='n', y='mean')
+bx = r2.plot(x='n', y='median', ax=ax)
+cx = r2.plot(x='n', y='std', ax=bx)
+r2.plot(x='n', y='exec_time', ax=cx)
+
+
+plt.grid()
+plt.ylabel('seconds')
+plt.show()
