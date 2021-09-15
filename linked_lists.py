@@ -37,7 +37,13 @@ class SingleLinkedList:
                 temp = prev_node.next
                 prev_node.next = add_node
                 add_node.next = temp
-            
+    
+    # Delete implementation
+
+    def delete(self, prev_node):
+        del_node = prev_node.next
+        prev_node.next = del_node.next
+        del_node.next = None
 
 
 # Linked list example
@@ -72,5 +78,10 @@ print("Inserting in between nodes (April node)")
 
 m6 = Node("April")
 list1.insert(m6,m3)
+
+list1.printList()
+
+print("Deleting elements (March node)")
+list1.delete(m2)
 
 list1.printList()
