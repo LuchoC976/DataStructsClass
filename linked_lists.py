@@ -14,6 +14,7 @@ class SingleLinkedList:
     def __init__(self, head=None):
         self.head = head
     
+    # Traverse works like this as well
     def printList(self):
         node = self.head
         while node:
