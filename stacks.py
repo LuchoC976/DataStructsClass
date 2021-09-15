@@ -6,6 +6,7 @@ class Node:
         self.next = None
     # For stacks there is no set_next()
 
+# Stack class implementation
 class Stack:
     def __init__(self, head=None):
         self.head = head
