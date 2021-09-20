@@ -19,10 +19,15 @@ class Queue:
         return output[:-4]
 
     def enqueue(self, item):
+        if (self.full()):
+            print("Queue is full")
         self.items[self.item_count] = item
         self.item_count += 1
 
     def dequeue(self):
+        if (self.empty()):
+            print("Queue is empty")
+            return None
         deq_value = self.items[0]
         for i in range(1, self.item_count):
              self.items[i-1] = self.items[i]
