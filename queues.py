@@ -21,6 +21,7 @@ class Queue:
     def enqueue(self, item):
         if (self.full()):
             print("Queue is full")
+            return None
         self.items[self.item_count] = item
         self.item_count += 1
 
