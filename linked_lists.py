@@ -6,6 +6,7 @@ class Node:
     def __init__(self, val=None):
         self.val = val
         self.next = None
+        self.prev = None
     
     def set_next(self, next):
         self.next = next
@@ -15,7 +16,7 @@ class SingleLinkedList:
         self.head = head
     
     # Traverse works like this as well
-    def printList(self):
+    def traverse(self):
         node = self.head
         while node:
             print(node.val)
@@ -23,8 +24,9 @@ class SingleLinkedList:
 
     # Insert implementation
     
-    def insert(self, add_node, prev_node=None):
+    def insert(self, data, prev_node=None):
         # Adding to start
+        add_node = Node(data)
         if prev_node == None:
             add_node.set_next(self.head)
             self.head = add_node
@@ -57,31 +59,27 @@ m2.set_next(m3)
 
 list1 = SingleLinkedList(m1)
 
-list1.printList()
+list1.traverse()
 
 print("Inserting node at start (December node)")
-m4 = Node("Dec")
 
+list1.insert("Dec")
 
-list1.insert(m4)
-
-list1.printList()
+list1.traverse()
 
 print("Inserting node at end (May node)")
 
-m5 = Node("May")
-list1.insert(m5,m3)
+list1.insert("May",m3)
 
-list1.printList()
+list1.traverse()
 
 print("Inserting in between nodes (April node)")
 
-m6 = Node("April")
-list1.insert(m6,m3)
+list1.insert("April",m3)
 
-list1.printList()
+list1.traverse()
 
 print("Deleting elements (March node)")
 list1.delete(m2)
 
-list1.printList()
+list1.traverse()
