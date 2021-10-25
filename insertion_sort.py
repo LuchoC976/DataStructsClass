@@ -1,4 +1,4 @@
-# Insertion sort implementation in Python
+# Insertion sort implementation in Python (O^2)
 
 my_arr = [8, 5, 4, 10, 9]
 
