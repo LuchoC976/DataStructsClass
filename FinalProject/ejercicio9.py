@@ -2,6 +2,7 @@ import unittest
 
 def TestValue_results():
     # Uso innecesario de memoria
+    # mainCir = ListCir()
     cir = ListCir();
     cir1 = ListCir();
     cir2 = ListCir();
