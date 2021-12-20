@@ -15,7 +15,7 @@ def TestValue_results():
 #recorremos por puestos el array "importante"
 #comparamos si el segundo puesto es igual al primero y retornamos
 def outputArray (array):
-    array.sort();
+    array.sort(); # Se puede implementar un método diferente al predeterminado de Python como mergeSort()
     for i in range ( 1, len (array) ):
         if array [i] == array [ i-1 ]:
             return array [i];
