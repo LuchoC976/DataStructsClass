@@ -8,7 +8,7 @@ def TestValue_results():
     assert arrayImp([8,1,2]) == 4, "Should be 4"
     assert arrayImp([7,3,4]) == 3, "Should be 3"
 
-
+# Implementacion del array
 def arrayImp (list):
     retTotal = 0;
     sumTotal = 0;
